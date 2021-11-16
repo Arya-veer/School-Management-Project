@@ -5,6 +5,8 @@
 package school_management_system;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.swing.table.DefaultTableModel;
 import static school_management_system.Teacher.convertStd;
 import static school_management_system.UserFileHandler.*;
@@ -101,35 +103,26 @@ public class TeacherDetails extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        ArrayList<Teacher> tlist = getTeacherList();
+        HashMap<String, ArrayList<String>> tmap = Teacher.getTeacherList();
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
 
-        for(int i = 0; i < tlist.size(); i++){
+        tmap.forEach((key,val)->{
+           String[] arr =  {key,
+            val.get(0),
+            val.get(1),
+            val.get(2),
+            val.get(4),
+            val.get(5),
+            val.get(3),
+            val.get(6),
+            val.get(7),
+            val.get(8)
+        
+        };
+        model.addRow(arr);
+        });
 
-            String stdstr = "";
-            ArrayList<Integer> stdlist = tlist.get(i).getStdList();
-                    
-            for(int j = 0;j<stdlist.size();j++){
-                stdstr = stdstr.concat(convertStd(stdlist.get(j)));
-                stdstr = stdstr.concat(",");
-            } 
-
-            String[] dataRow = {tlist.get(i).getUUID().toString(),
-                tlist.get(i).getUsername(),
-                tlist.get(i).getPass(),
-                String.valueOf(tlist.get(i).getBDay()),
-                tlist.get(i).getCourse().getCourseID(),
-                String.valueOf(tlist.get(i).getSex()),
-                tlist.get(i).getEmail(),
-                tlist.get(i).getAddress(),
-                stdstr,
-                Double.toString(tlist.get(i).getSalary()),
-                };
-
-            model.addRow(dataRow);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    }
     /**
      * @param args the command line arguments
      */
