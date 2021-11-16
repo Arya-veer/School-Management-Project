@@ -50,8 +50,6 @@ public class AdminScreen extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         I1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -75,10 +73,6 @@ public class AdminScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Welcome  Admin");
-
-        jButton1.setText("Manage Students");
-
-        jButton2.setText("Manage Teachers");
 
         jMenu1.setText("STUDENT SYSTEM");
 
@@ -142,7 +136,7 @@ public class AdminScreen extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem8);
 
-        jMenuItem13.setText("Change Salary");
+        jMenuItem13.setText("CHANGE SALARY");
         jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem13ActionPerformed(evt);
@@ -201,26 +195,15 @@ public class AdminScreen extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addComponent(I1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(92, 92, 92))
+                .addGap(92, 434, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(jButton1)
-                        .addGap(70, 70, 70)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(I1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(68, 68, 68)
+                .addComponent(I1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(156, Short.MAX_VALUE))
         );
 
@@ -284,6 +267,7 @@ public class AdminScreen extends javax.swing.JFrame {
           i++;
           attrib.set(9,Integer.toString(i));
           JOptionPane.showMessageDialog(this,"Attendence Marked");
+          Teacher.closeTeacherFile();
         }
         
         else JOptionPane.showMessageDialog(this,"Teacher doesn't exist");
@@ -296,10 +280,10 @@ public class AdminScreen extends javax.swing.JFrame {
         
         if(map.containsKey(str)){
           ArrayList<String> attrib = map.get(str);
-          double i = Double.parseDouble(attrib.get(8));
-          i++;
+          double i = Double.parseDouble(JOptionPane.showInputDialog(this,"Enter Salary:"));
           attrib.set(8,Double.toString(i));
-          JOptionPane.showMessageDialog(this,"Attendence Marked");
+          JOptionPane.showMessageDialog(this,"Salary Changed");
+          Teacher.closeTeacherFile();
         }
         
         else JOptionPane.showMessageDialog(this,"Teacher doesn't exist");
@@ -342,8 +326,6 @@ public class AdminScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel I1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

@@ -1,2 +1,5 @@
 1) List Box in Add and Update Student.
-2) 
+2) Images
+3) Mark Attendence (Once per day,All students at time)
+4) Do Same for teacher 
+5) Give Marks to students,check for courses   

@@ -4,6 +4,8 @@
  */
 package school_management_system;
 
+import java.util.UUID;
+
 /**
  *
  * @author arya_veer
@@ -135,9 +137,9 @@ public class Login extends javax.swing.JFrame {
         
         if(b){
             switch(usertype){
-                case "Student":break;
-                case "Teacher":break;
-                case "Admin"  :    new AdminScreen().setVisible(true); break;
+                case "Student"  :   new StudentScreen(UUID.fromString(T1.getText())).setVisible(true); break;
+                case "Teacher"  :   break;
+                case "Admin"    :   new AdminScreen().setVisible(true); break;
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
