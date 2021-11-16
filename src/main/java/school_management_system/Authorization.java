@@ -24,7 +24,7 @@ public class Authorization {
                 return uniqueID.equals("Guruji") && password.equals("admin");
                 
             case "Teacher": 
-                HashMap<String,ArrayList<String>> tmap= Teacher.getTeacherList();
+                HashMap<String,ArrayList<String>> tmap = Teacher.getTeacherList();
                 if(tmap.containsKey(uniqueID)){
                     return tmap.get(uniqueID).get(1).equals(password);
                 }        
