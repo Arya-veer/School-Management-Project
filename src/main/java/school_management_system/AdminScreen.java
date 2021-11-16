@@ -63,6 +63,7 @@ public class AdminScreen extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -140,6 +141,14 @@ public class AdminScreen extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem8);
+
+        jMenuItem13.setText("Change Salary");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem13);
 
         jMenuItem9.setText("VIEW DETAILS");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
@@ -280,6 +289,22 @@ public class AdminScreen extends javax.swing.JFrame {
         else JOptionPane.showMessageDialog(this,"Teacher doesn't exist");
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        HashMap<String,ArrayList<String>> map = Teacher.getTeacherList();
+        
+        String str = JOptionPane.showInputDialog(this,"Enter UUID");
+        
+        if(map.containsKey(str)){
+          ArrayList<String> attrib = map.get(str);
+          double i = Double.parseDouble(attrib.get(8));
+          i++;
+          attrib.set(8,Double.toString(i));
+          JOptionPane.showMessageDialog(this,"Attendence Marked");
+        }
+        
+        else JOptionPane.showMessageDialog(this,"Teacher doesn't exist");
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -328,6 +353,7 @@ public class AdminScreen extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

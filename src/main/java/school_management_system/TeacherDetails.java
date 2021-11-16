@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.swing.table.DefaultTableModel;
-import static school_management_system.Teacher.convertStd;
-import static school_management_system.UserFileHandler.*;
 
 /**
  *
@@ -38,7 +36,7 @@ public class TeacherDetails extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton1.setText("SHOW");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +99,7 @@ public class TeacherDetails extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 
         HashMap<String, ArrayList<String>> tmap = Teacher.getTeacherList();
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();

@@ -82,7 +82,7 @@ public class AddStudent extends javax.swing.JFrame {
         P1 = new javax.swing.JPasswordField();
         T2 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -110,7 +110,6 @@ public class AddStudent extends javax.swing.JFrame {
         jLabel6.setText("Student  Standard");
 
         C3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII" }));
-    
 
         jLabel7.setText("Student Sex");
 
