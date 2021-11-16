@@ -21,7 +21,7 @@ public class Authorization {
                     return map.get(uniqueID).get(1).equals(password);
                 }
             case "Admin": 
-                return uniqueID.equals("admin") && password.equals("admin");
+                return uniqueID.equals("Guruji") && password.equals("admin");
                 
             case "Teacher": 
                 HashMap<String,ArrayList<String>> tmap= Teacher.getTeacherList();
