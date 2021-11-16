@@ -26,7 +26,7 @@ public class AdminScreen extends javax.swing.JFrame {
     public AdminScreen() {
         initComponents();
         
-        String path = "./src/main/java/school_management_system/files/image.jpeg";
+        String path = "./src/main/java/school_management_system/files/images.jfif";
         
         ImageIcon image;
         try {
