@@ -229,6 +229,7 @@ public class AdminScreen extends javax.swing.JFrame {
         
         if(map.containsKey(str))map.remove(str);
         else JOptionPane.showMessageDialog(this,"Student doesn't exist");
+        Student.closeStudFile();
         
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
