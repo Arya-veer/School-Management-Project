@@ -121,9 +121,24 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        if(User.adminAuthorization(T1.getText(), P1.getText()) && R3.isSelected()){
+
+        /*if(User.adminAuthorization(T1.getText(), P1.getText()) && R3.isSelected()){
             new AdminScreen().setVisible(true);
+        }*/
+        String usertype = "";
+        
+        if(R1.isSelected()) usertype = "Student";
+        else if(R2.isSelected()) usertype = "Teacher";
+        else if(R3.isSelected()) usertype = "Admin";
+        
+        boolean b = Authorization.checkUserPass(usertype,T1.getText().trim(),P1.getText().trim());
+        
+        if(b){
+            switch(usertype){
+                case "Student":break;
+                case "Teacher":break;
+                case "Admin"  :    new AdminScreen().setVisible(true); break;
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
