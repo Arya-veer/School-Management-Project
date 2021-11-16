@@ -1,0 +1,2 @@
+SC10001:Science;1000;sagsdgag;
+MA10001:Mathematics;100;Tough hai;
