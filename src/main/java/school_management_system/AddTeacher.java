@@ -19,11 +19,19 @@ public class AddTeacher extends javax.swing.JFrame {
     HashMap<String,ArrayList<String>> courseMap = Course.getCourseList();
     ArrayList<String> courselist = new ArrayList<String>(courseMap.keySet());
     
+    
+    
     /**
      * Creates new form AddTeacher
      */
     public AddTeacher() {
         initComponents();
+        
+        L1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
         
          String str = "";
         for(int j = 0; j<courselist.size();j++){
@@ -36,7 +44,7 @@ public class AddTeacher extends javax.swing.JFrame {
     }
 
     AddTeacher(String username, String password, int c1, int c2, String year, 
-               String courseID, int sex, String salary, String address, String email, String stdlist) {
+               String courseID, int sex, String salary, String address, String email, int[] indices) {
         initComponents();
         
         String str = " ";
@@ -66,7 +74,7 @@ public class AddTeacher extends javax.swing.JFrame {
         A1.setText(address);
         T3.setText(email);
         T4.setText(salary);
-        A2.setText(stdlist);
+        L1.setSelectedIndices(indices);
     }
 
     /**
@@ -95,14 +103,14 @@ public class AddTeacher extends javax.swing.JFrame {
         T1 = new javax.swing.JTextField();
         R3 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        A2 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         T3 = new javax.swing.JTextField();
         C3 = new javax.swing.JComboBox<>();
         T4 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        L1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -145,15 +153,13 @@ public class AddTeacher extends javax.swing.JFrame {
             }
         });
 
-        A2.setColumns(20);
-        A2.setRows(5);
-        jScrollPane2.setViewportView(A2);
-
         jLabel5.setText("Student  BDAY");
 
         jLabel6.setText("Teacher  Course");
 
         jLabel9.setText("Teacher Salary");
+
+        jScrollPane3.setViewportView(L1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,10 +168,7 @@ public class AddTeacher extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3)
                     .addComponent(jLabel8))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
@@ -183,16 +186,6 @@ public class AddTeacher extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel4)
-                                .addGap(2, 2, 2)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton1)
-                                        .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(16, 16, 16))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,8 +215,25 @@ public class AddTeacher extends javax.swing.JFrame {
                                                     .addComponent(R3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(68, 68, 68)
-                                        .addComponent(T4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(0, 0, Short.MAX_VALUE)
+                                                        .addComponent(jLabel4)
+                                                        .addGap(2, 2, 2))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jButton1)
+                                                        .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(16, 16, 16))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(T4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE))))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(127, 127, 127)
@@ -278,15 +288,16 @@ public class AddTeacher extends javax.swing.JFrame {
                             .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(67, 67, 67))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(50, 50, 50))))
+                        .addGap(50, 50, 50))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(70, 70, 70)))
+                        .addGap(67, 67, 67))))
         );
 
         pack();
@@ -322,11 +333,11 @@ public class AddTeacher extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Invalid Sex");
         }
 
+        int[] stdint = L1.getSelectedIndices();
+        for(int k = 0;k< stdint.length;k++)stdint[k]++;
 
-        //Will convert String[] to int[] 
-        String[] stdstr = A2.getText().trim().split(",");
-        
-        standardList = getStdNo(stdstr);
+        ArrayList<Integer> stdls =  new ArrayList<>();
+        stdls.addAll(Arrays.stream(stdint).boxed().toList());
 
         switch((String)C2.getSelectedItem()){
 
@@ -357,7 +368,7 @@ public class AddTeacher extends javax.swing.JFrame {
 
         Teacher newteacher = new Teacher(uuid,T1.getText().trim(),P1.getText().trim(),
                                       date,sex,A1.getText().trim(),T3.getText().trim(),
-                                      courseID,standardList,salary,0);
+                                      courseID,stdls,salary,0);
 
         if(x == 0){
             newteacher.saveTeacher();
@@ -377,7 +388,7 @@ public class AddTeacher extends javax.swing.JFrame {
             C3.setSelectedIndex(0);
             P1.setText("");
             A1.setText(" ");
-            A2.setText(" ");
+            L1.clearSelection();
             R1.setSelected(true);
         }
             }
@@ -422,10 +433,10 @@ public class AddTeacher extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea A1;
-    private javax.swing.JTextArea A2;
     private javax.swing.JComboBox<String> C1;
     private javax.swing.JComboBox<String> C2;
     private javax.swing.JComboBox<String> C3;
+    private javax.swing.JList<String> L1;
     private javax.swing.JPasswordField P1;
     private javax.swing.JRadioButton R1;
     private javax.swing.JRadioButton R2;
@@ -445,6 +456,6 @@ public class AddTeacher extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }

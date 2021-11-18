@@ -35,6 +35,13 @@ public class UpdateTeacher extends javax.swing.JFrame {
         
         String[] CourseIDs = str.split(",");
         C3.setModel(new javax.swing.DefaultComboBoxModel<>(CourseIDs));
+        
+        L1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        
     }
 
 
@@ -55,8 +62,6 @@ public class UpdateTeacher extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         R3 = new javax.swing.JRadioButton();
         T3 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        A2 = new javax.swing.JTextArea();
         C3 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         C1 = new javax.swing.JComboBox<>();
@@ -78,6 +83,8 @@ public class UpdateTeacher extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         T5 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        L1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -106,10 +113,6 @@ public class UpdateTeacher extends javax.swing.JFrame {
         buttonGroup1.add(R3);
         R3.setText("A Lot");
 
-        A2.setColumns(20);
-        A2.setRows(5);
-        jScrollPane2.setViewportView(A2);
-
         jLabel7.setText("Student Sex");
 
         C1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
@@ -117,12 +120,6 @@ public class UpdateTeacher extends javax.swing.JFrame {
         C2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
         jLabel1.setText("STUDENT NAME");
-
-        U1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                U1ActionPerformed(evt);
-            }
-        });
 
         A1.setColumns(20);
         A1.setRows(5);
@@ -150,6 +147,8 @@ public class UpdateTeacher extends javax.swing.JFrame {
 
         jLabel11.setText("Attendence");
 
+        jScrollPane3.setViewportView(L1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -163,9 +162,10 @@ public class UpdateTeacher extends javax.swing.JFrame {
                         .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(65, 65, 65)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(T5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -294,13 +294,14 @@ public class UpdateTeacher extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43))
+                        .addComponent(jLabel3)
+                        .addGap(113, 113, 113))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(89, 89, 89))))
+                        .addGap(89, 89, 89))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -328,7 +329,7 @@ public class UpdateTeacher extends javax.swing.JFrame {
             T5.setText(" ");
             P1.setText("");
             A1.setText(" ");
-            A2.setText(" ");
+            L1.clearSelection();
             C1.setSelectedIndex(0);
             C2.setSelectedIndex(0);
             C3.setSelectedIndex(0);
@@ -358,9 +359,10 @@ public class UpdateTeacher extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Invalid Sex");
         }
 
-        String[] stdstr = A2.getText().trim().split(",");
-        
-        stdlist = getStdNo(stdstr);
+        int[] stdint = L1.getSelectedIndices();
+        for(int k = 0;k< stdint.length;k++)stdint[k]++;
+
+        stdlist.addAll(Arrays.stream(stdint).boxed().toList());
 
         switch((String)C2.getSelectedItem()){
 
@@ -416,7 +418,7 @@ public class UpdateTeacher extends javax.swing.JFrame {
 
                 new AddTeacher(T1.getText(),P1.getText(),C1.getSelectedIndex(),
                     C2.getSelectedIndex(),T2.getText(),courseID,radio,T4.getText(),
-                    A1.getText(),T3.getText(),A2.getText()).setVisible(true);
+                    A1.getText(),T3.getText(),L1.getSelectedIndices()).setVisible(true);
                 this.dispose();
             }
             else if(ans == 2) {
@@ -431,7 +433,7 @@ public class UpdateTeacher extends javax.swing.JFrame {
                 T5.setText(" ");
                 P1.setText("");
                 A1.setText(" ");
-                A2.setText(" ");
+                L1.clearSelection();
                 C1.setSelectedIndex(0);
                 C2.setSelectedIndex(0);
                 C3.setSelectedIndex(0);
@@ -450,7 +452,7 @@ public class UpdateTeacher extends javax.swing.JFrame {
             T5.setText(" ");
             P1.setText("");
             A1.setText(" ");
-            A2.setText(" ");
+            L1.clearSelection();
             C1.setSelectedIndex(0);
             C2.setSelectedIndex(0);
             C3.setSelectedIndex(0);
@@ -459,13 +461,7 @@ public class UpdateTeacher extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void U1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_U1ActionPerformed
-
-    }//GEN-LAST:event_U1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        
 
         boolean d = new Teacher(UUID.fromString(U1.getText()),null,null,null,
                                 ' ',null,null,null,null,0.0,0).inTeacherList();
@@ -495,14 +491,11 @@ public class UpdateTeacher extends javax.swing.JFrame {
                 A1.setText(teacher.getAddress());
                 T3.setText(teacher.getEmail());
 
-                ArrayList<Integer> stdlist = teacher.getStdList();
-
-                A2.setText("");
+                int[] indices = teacher.getStdList().stream().mapToInt(i->i).toArray();
                 
-                for(int j = 0;j<stdlist.size();j++){
-                A2.append(convertStd(stdlist.get(j)));
-                A2.append(",");
-            }
+                for(int k = 0;k< indices.length;k++)indices[k]--;
+                
+                L1.setSelectedIndices(indices);
 
                 T4.setText(Double.toString(teacher.getSalary()));   
                 T5.setText(Integer.toString(teacher.getAttendence()));
@@ -528,7 +521,7 @@ public class UpdateTeacher extends javax.swing.JFrame {
 
                 new AddTeacher(T1.getText(),P1.getText(),C1.getSelectedIndex(),
                     C2.getSelectedIndex(),T2.getText(),(String)C3.getSelectedItem(),radio,T4.getText(),
-                    A1.getText(),T3.getText(),A2.getText()).setVisible(true);
+                    A1.getText(),T3.getText(),L1.getSelectedIndices()).setVisible(true);
                 this.dispose();
             }
             else if(ans == 2) {
@@ -543,7 +536,7 @@ public class UpdateTeacher extends javax.swing.JFrame {
                 T5.setText(" ");
                 P1.setText("");
                 A1.setText(" ");
-                A2.setText(" ");
+                L1.clearSelection();
                 C1.setSelectedIndex(0);
                 C2.setSelectedIndex(0);
                 C3.setSelectedIndex(0);
@@ -594,10 +587,10 @@ public class UpdateTeacher extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea A1;
-    private javax.swing.JTextArea A2;
     private javax.swing.JComboBox<String> C1;
     private javax.swing.JComboBox<String> C2;
     private javax.swing.JComboBox<String> C3;
+    private javax.swing.JList<String> L1;
     private javax.swing.JPasswordField P1;
     private javax.swing.JRadioButton R1;
     private javax.swing.JRadioButton R2;
@@ -623,6 +616,6 @@ public class UpdateTeacher extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }

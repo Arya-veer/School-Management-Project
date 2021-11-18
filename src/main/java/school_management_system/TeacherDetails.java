@@ -4,9 +4,7 @@
  */
 package school_management_system;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
+import java.util.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -52,11 +50,11 @@ public class TeacherDetails extends javax.swing.JFrame {
 
             },
             new String [] {
-                "UUID", "NAME", "PASS", "Date", "Course", "Sex", "Email", "Address", "Standards", "Salary"
+                "UUID", "NAME", "PASS", "Date", "Course", "Sex", "Email", "Address", "Standards", "Salary", "Attendence"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -105,6 +103,28 @@ public class TeacherDetails extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
 
         tmap.forEach((key,val)->{
+            
+            String[] stdstr = val.get(7).split(",");
+            String[] stds = new String[stdstr.length];
+            
+            for(int k = 0;k<stdstr.length;k++){
+                switch(stdstr[k]){
+                    case "1" : stds[k] = "I"   ;break; 
+                    case "2" : stds[k] = "II"  ;break;
+                    case "3" : stds[k] = "III" ;break; 
+                    case "4" : stds[k] = "IV"  ;break;
+                    case "5" : stds[k] = "V"   ;break;
+                    case "6" : stds[k] = "VI"  ;break;
+                    case "7" : stds[k] = "VII" ;break; 
+                    case "8" : stds[k] = "VIII";break;       
+                    case "9" : stds[k] = "IX"  ;break;  
+                    case "10": stds[k] = "X"   ;break; 
+                    case "11": stds[k] = "XI"  ;break; 
+                    case "12": stds[k] = "XII" ;break;   
+                    default : System.out.println("Invalid Grade");    
+                }
+            }
+            
            String[] arr =  {key,
             val.get(0),
             val.get(1),
@@ -113,13 +133,16 @@ public class TeacherDetails extends javax.swing.JFrame {
             val.get(5),
             val.get(3),
             val.get(6),
-            val.get(7),
-            val.get(8)
+            Arrays.toString(stds),
+            val.get(8),
+            val.get(9)
         
         };
         model.addRow(arr);
         });
 
+        jButton1.setEnabled(false);
+        
     }
     /**
      * @param args the command line arguments

@@ -20,7 +20,9 @@ public class Teacher extends User{
     private double salary;
     ArrayList<Integer> standards = new ArrayList<>();
     private final static String filepath = "./src/main/java/school_management_system/files/Teacher.txt";
+    private final static String filepath2 = "./src/main/java/school_management_system/files/Markslist.txt";
     private static HashMap<String,ArrayList<String>> map = getfromFile(filepath);
+    private static HashMap<String,ArrayList<String>> marksmap = getfromFile(filepath2);
     
     Teacher(UUID uuid,String username,String password,java.sql.Date birthDate,char sex, 
             String address,String email,String courseID,
@@ -102,20 +104,12 @@ public class Teacher extends User{
       return arr;
    }
     
-    
-    public void assignStandard(int i){
-        if(standards.contains(i)){
-            JOptionPane.showMessageDialog(null, "Invalid Standard");
-        }
-        else{
-            standards.add(i);
-        }
-    }
-    
-   public void giveMarks(Student s,int marks){
-       if((standards.contains(s.getStd()))  && (s.stdcourses.containsKey(courseID))){
-           s.gradeCourse(courseID, marks);
-        }
+   public void giveMarks(UUID studuuid,int marks){
+        
+       if(marksmap.containsKey(studuuid)){
+           
+       }
+       
        else{
            JOptionPane.showMessageDialog(null, "Invalid action");
         }
@@ -167,54 +161,4 @@ public class Teacher extends User{
         saveToFile(map,filepath);
     }
  
-    public static ArrayList<Integer> getStdNo(String[] stdstr){
-    
-    ArrayList<Integer> stdNo = new ArrayList<>();
-    
-    for(int i = 0;i<stdstr.length;i++){
-        int std = 0;
-        
-        switch(stdstr[i]){
-            case "I"   : std= 1; break; 
-            case "II"  : std= 2; break;
-            case "III" : std= 3; break; 
-            case "IV"  : std= 4; break;
-            case "V"   : std= 5; break;
-            case "VI"  : std= 6; break;
-            case "VII" : std= 7; break; 
-            case "VIII": std= 8; break;       
-            case "IX"  : std= 9; break;  
-            case "X"   : std= 10;break; 
-            case "XI"  : std= 11;break; 
-            case "XII" : std= 12;break;   
-            default : System.out.println("Invalid Grade");   
-        }
-        
-        stdNo.add(std);    
-    }
-    
-    return stdNo;
-}   
-   
-    public static String  convertStd(int std){
-   
-        String str = "";
-        
-        switch(std){
-            case 1 : str = "I"   ;break; 
-            case 2 : str = "II"  ;break;
-            case 3 : str = "III" ;break; 
-            case 4 : str = "IV"  ;break;
-            case 5 : str = "V"   ;break;
-            case 6 : str = "VI"  ;break;
-            case 7 : str = "VII" ;break; 
-            case 8 : str = "VIII";break;       
-            case 9 : str = "IX"  ;break;  
-            case 10: str = "X"   ;break; 
-            case 11: str = "XI"  ;break; 
-            case 12: str = "XII" ;break;   
-            default : System.out.println("Invalid Grade");   
-        }
-        return str;
-    }   
 }
