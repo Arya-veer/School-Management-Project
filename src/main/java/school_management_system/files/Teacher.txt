@@ -1,3 +1,3 @@
-90061dbc-8773-4fa1-a7b9-099ba0d1e804:Akul;fasdgSDG;2002-01-01;M;dfFDA;ASFASFA;MA10001;1,2,3,4;20000.0;8;
-5673f5fc-5928-4831-af62-86c5fed81eb4:Akul;gsdgsfgads;2002-05-01;M;dgasdfasfasddsdsd;dafasdfasf@dfadf.com;MA10001;1,2,3,4,5;10000.0;7;
-5eed481e-f78c-459d-a626-a44b7922adae:adsff;dafad;2002-01-01;M;xas;zcvzv;SC10001;1,2,3,4;100.0;6;
+90061dbc-8773-4fa1-a7b9-099ba0d1e804:Akul;fasdgSDG;2002-01-01;M;dfFDA;ASFASFA;MA10001;1,2,3,4;20000.0;0;
+5673f5fc-5928-4831-af62-86c5fed81eb4:Akul;gsdgsfgads;2002-05-01;M;dgasdfasfasddsdsd;dafasdfasf@dfadf.com;MA10001;1,2,3,4,5;10000.0;0;
+5eed481e-f78c-459d-a626-a44b7922adae:adsff;dafad;2002-01-01;M;xas;zcvzv;SC10001;1,2,3,4;100.0;0;

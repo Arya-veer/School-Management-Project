@@ -86,9 +86,6 @@ public abstract class User {
     public void setEmail(String email){
         this.email = email;
     }
-    public void forgetPassword(String username){
-        // if user exists then send the new password through mail
-    }
     public void changePassword(String username, String Password, String newPassword){
         if(this.username.equals(username) && this.password.equals(password)){
             this.password = newPassword;
@@ -97,30 +94,6 @@ public abstract class User {
             JOptionPane.showMessageDialog(null,"Kindly check your username or password");
         }
     }
-
-    public static boolean adminAuthorization(String username,String password){
-        if((username.equals("admin")) && (password.equals("admin123"))){
-            return true;
-            }
-        else{
-            return false;
-        }    
-    }
-    
-    
-    /* create getter and setter for all except UUID 
-    Make getter for UUID
-    */
-//    public static boolean login(String username, String Password){
-////        if(this.username.equals(username) && this.password.equals(password)){
-////            // Jform.setVisible() = true;
-////            return true;
-////        }
-////        else{
-////            JOptionPane.showMessageDialog(null,"Kindly check your username or password");
-////            return false;
-////        }
-//    }
     
     public void markAttendence(){
         attendence++;

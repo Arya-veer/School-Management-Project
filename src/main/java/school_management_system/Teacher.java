@@ -20,9 +20,7 @@ public class Teacher extends User{
     private double salary;
     ArrayList<Integer> standards = new ArrayList<>();
     private final static String filepath = "./src/main/java/school_management_system/files/Teacher.txt";
-    private final static String filepath2 = "./src/main/java/school_management_system/files/Markslist.txt";
     private static HashMap<String,ArrayList<String>> map = getfromFile(filepath);
-    private static HashMap<String,ArrayList<String>> marksmap = getfromFile(filepath2);
     
     Teacher(UUID uuid,String username,String password,java.sql.Date birthDate,char sex, 
             String address,String email,String courseID,
@@ -54,7 +52,6 @@ public class Teacher extends User{
         
         salary = Double.parseDouble(attrib.get(8));
         attendence = Integer.parseInt(attrib.get(9));     
-
     }
     
     //Getters
@@ -106,13 +103,20 @@ public class Teacher extends User{
     
    public void giveMarks(UUID studuuid,int marks){
         
-       if(marksmap.containsKey(studuuid)){
-           
-       }
+       String filepath2 = "./src/main/java/school_management_system/files/"+ 
+               courseID+"Markslist.txt";
+       HashMap<String,ArrayList<String>> marksmap = getfromFile(filepath2);
        
+       ArrayList<String> mark = new ArrayList<>();    
+       mark.add(Integer.toString(marks));
+       
+       if(marksmap.containsKey(studuuid.toString())){
+           marksmap.replace(studuuid.toString(),mark);
+       }
        else{
-           JOptionPane.showMessageDialog(null, "Invalid action");
-        }
+           marksmap.put(studuuid.toString(),mark);
+       }
+       saveToFile(marksmap,filepath2);
     }
    
    //Make attribute list

@@ -10,6 +10,7 @@ import java.nio.file.*;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Akul
@@ -26,7 +27,9 @@ public class StudentScreen extends javax.swing.JFrame {
           initComponents();
           
           this.uuid = uuid;
+          
           Student stud = new Student(uuid);
+          
           String dirname = "./src/main/java/school_management_system/files/"; //directory
           
           x = ImageHandler.getImg(dirname,uuid.toString(),J2);
@@ -40,7 +43,20 @@ public class StudentScreen extends javax.swing.JFrame {
           J1.setText("Welcome "+ stud.getUsername());
  
           J3.setText("You have attended the school for " 
-                  + stud.getAttendence() + " days.");   
+                  + stud.getAttendence() + " days.");
+         
+         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+         ArrayList<String> courselist = stud.getStdCourses();
+         
+         for(int i = 0;i<courselist.size();i++){
+             String filename = dirname + courselist.get(i) + "Markslist.txt";
+             HashMap<String,ArrayList<String>> marks = HashMapHandler.getfromFile(filename);
+             if(marks.containsKey(stud.getUUID().toString())){
+                ArrayList<String> mark = marks.get(stud.getUUID().toString());
+                String[] dataRow = {courselist.get(i),mark.get(0)};
+                model.addRow(dataRow);
+                } 
+         } 
     }
 
     /**
@@ -73,10 +89,7 @@ public class StudentScreen extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Course", "Marks"

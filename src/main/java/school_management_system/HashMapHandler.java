@@ -64,7 +64,9 @@ public class HashMapHandler {
   
             // create file object
             File file = new File(filepath);
-  
+            
+            file.createNewFile();
+            
             // create BufferedReader object from the File
             br = new BufferedReader(new FileReader(file));
   
