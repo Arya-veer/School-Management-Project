@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Akul
+ * @author Arya veer and Ruchika
  */
 public class StudentDetails extends javax.swing.JFrame {
 

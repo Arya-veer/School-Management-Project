@@ -16,7 +16,7 @@ import static school_management_system.Teacher.*;
 
 /**
  *
- * @author Akul
+ * @author Arya veer and Ruchika
  */
 public class AddTeacher extends javax.swing.JFrame {
 

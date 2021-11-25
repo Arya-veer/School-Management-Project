@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Akul
+ * @author Arya veer and Ruchika
  */
 public class AddStudent extends javax.swing.JFrame {
 

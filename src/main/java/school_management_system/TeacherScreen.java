@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Akul
+ * @author Arya veer and Ruchika
  */
 public class TeacherScreen extends javax.swing.JFrame {
 

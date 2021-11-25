@@ -10,7 +10,7 @@ import javax.swing.*;
 
 /**
  *
- * @author Akul
+ * @author Arya veer and Ruchika
  */
 public class ImageHandler {
     

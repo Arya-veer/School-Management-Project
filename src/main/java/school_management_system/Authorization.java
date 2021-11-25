@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  *
- * @author Akul
+ * @author Arya veer and Ruchika
  */
 public class Authorization {
     

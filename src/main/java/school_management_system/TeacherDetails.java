@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Akul
+ * @author Arya veer and Ruchika
  */
 public class TeacherDetails extends javax.swing.JFrame {
 

@@ -14,7 +14,7 @@ import static school_management_system.HashMapHandler.*;
  *
  * @author arya_veer
  */
-public class Student extends User{
+public class Student extends User{/*  */
     
     HashMap<String,Integer> stdcourses = new HashMap<>();
     
