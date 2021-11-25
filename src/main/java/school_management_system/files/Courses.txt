@@ -1,3 +1,4 @@
 SC10001:Science;1000;sagsdgag;
+SS10001:History;100;hello;
 HS10001:History;100;dsfgasdsg;
 MA10001:Mathematics;1000;Mathematics;

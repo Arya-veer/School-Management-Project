@@ -211,15 +211,18 @@ public class AdminScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        new AddCourses().setVisible(true);        
+        new AddCourses().setVisible(true); 
+        this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        new CourseDetails().setVisible(true);        
+        new CourseDetails().setVisible(true); 
+        this.dispose();
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        new UpdateCourses().setVisible(true);        
+        new UpdateCourses().setVisible(true);  
+        this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -230,31 +233,39 @@ public class AdminScreen extends javax.swing.JFrame {
         if(map.containsKey(str))map.remove(str);
         else JOptionPane.showMessageDialog(this,"Student doesn't exist");
         Student.closeStudFile();
+        new StudentDetails().setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         new AddStudent().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         new UpdateStudent().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         new StudentDetails().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         new AddTeacher().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        new UpdateTeacher().setVisible(true);
+        new UpdateTeacherNew().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
        new TeacherDetails().setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
@@ -271,7 +282,10 @@ public class AdminScreen extends javax.swing.JFrame {
           Teacher.closeTeacherFile();
         }
         
+        
         else JOptionPane.showMessageDialog(this,"Teacher doesn't exist");
+        new TeacherDetails().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
@@ -288,6 +302,8 @@ public class AdminScreen extends javax.swing.JFrame {
         }
         
         else JOptionPane.showMessageDialog(this,"Teacher doesn't exist");
+        new TeacherDetails().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     /**

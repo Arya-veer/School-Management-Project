@@ -18,10 +18,10 @@ public class TeacherScreen extends javax.swing.JFrame {
     /**
      * Creates new form TeacherScreen
      */
-    private static UUID uuid = UUID.fromString("90061dbc-8773-4fa1-a7b9-099ba0d1e804");
+    private static UUID uuid;
     public TeacherScreen(UUID uuid) {
         initComponents();
-       
+       this.uuid = uuid;
     }
 
     /**
@@ -49,16 +49,16 @@ public class TeacherScreen extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(342, Short.MAX_VALUE)
+                .addContainerGap(229, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(113, 113, 113))
+                .addGap(226, 226, 226))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(227, Short.MAX_VALUE)
+                .addContainerGap(218, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(194, 194, 194))
+                .addGap(203, 203, 203))
         );
 
         pack();

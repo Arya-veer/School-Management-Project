@@ -1,1 +1,8 @@
+5b942290-d8a9-4d99-9232-2765901b2bf1:Archaj;12345;2002-02-22;7;O;vycvtycv;igyu8y@yvh.com;MA10001,gfd;0;
+40486e2e-52d3-4956-83dc-1d294fb03339:Satvik;44656;1991-01-01;8;F;fnrgvjl.e;fewovn@mfpew.com;MA10001;0;
+2ccf1c6c-3aef-472b-b9f9-80abd1e3acc2:Akul;onisjv;2001-01-01;1;M;oensfje;fne8wfu@fien.com;MA10001;0;
+2997032b-632b-4f19-b3c5-8f570d18a15b:Ruchi;123;2001-01-01;1;M;onw;ownal@mowv.com;MA10001;0;
+762fd5e0-cdd8-49e3-8312-ff4c816edfc2:nannu;ruchi;1111-01-01;1;O;bikhdrslv;vonl@niws.com;MA10001;0;
+373ecd62-e33a-4ce7-bee9-a047305f897b:Ruchika;12345;2002-01-01;1;F;biawbjfierabvl;groaqi@vijern.com;MA10001;0;
 c7eef658-df7d-4db7-bc1f-e21735b7f854:Akul;safaf;2002-01-01;1;F;asfasfa;fasdfwewf@gmial.com;MA10001,SC10001;0;
+a303cffd-9a3e-451c-b784-c2d0714b36cc:Anushka;asdfg;2001-01-01;1;F;gragg;edfa@grg.com;MA10001;0;

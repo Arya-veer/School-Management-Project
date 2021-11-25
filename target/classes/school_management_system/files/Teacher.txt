@@ -1,2 +1,5 @@
-90061dbc-8773-4fa1-a7b9-099ba0d1e804:Akul;fasdgSDG;2002-01-01;M;dfFDA;ASFASFA;MA10001;1,2,3,4;10000.0;0;
-5673f5fc-5928-4831-af62-86c5fed81eb4:Akul;gsdgsfgads;2002-05-01;M;dgasdfasfasddsdsd;dafasdfasf@dfadf.com;MA10001;1,2,3,4,5;10000.0;1;
+90061dbc-8773-4fa1-a7b9-099ba0d1e804:Akul;fasdgSDG;2002-01-01;M;dfFDA;ASFASFA;MA10001;1,2,3,4;20000.0;1;
+5673f5fc-5928-4831-af62-86c5fed81eb4:Akul;gsdgsfgads;2002-05-01;M;dgasdfasfasddsdsd;dafasdfasf@dfadf.com;MA10001;1,2,3,4,5;10000.0;0;
+adbd5069-225e-4612-a12b-06b33f916bc9:Nannu;Ruchi;1982-03-04;M;feiayibvykersy;niewbvc@iwe.com;HS10001;6,8,11;100000.0;0;
+a84a55d8-deb8-4ace-b758-523c5d9976e9:Dipankar;dip@1234;1885-04-04;M;Belonia, South Tripura;dip123@gmail.com;SC10001;12;40000.0;0;
+5eed481e-f78c-459d-a626-a44b7922adae:adsff;dafad;2002-01-01;M;xas;zcvzv;SC10001;1,2,3,4;100.0;0;

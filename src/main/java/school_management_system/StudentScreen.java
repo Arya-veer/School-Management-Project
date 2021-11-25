@@ -26,7 +26,7 @@ public class StudentScreen extends javax.swing.JFrame {
     public StudentScreen(UUID uuid){
           initComponents();
           
-          this.uuid = uuid;
+//          StudentScreen.uuid = uuid;
           
           Student stud = new Student(uuid);
           
@@ -112,7 +112,7 @@ public class StudentScreen extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("File");
+        jMenu1.setText("OPTIONS");
 
         jMenuItem1.setText("Change Password");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
